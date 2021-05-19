@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,500;1,600&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+}
+
+.container {
+  /* display: inline-block; */
+  float: left !important;
+}
+.header-inside {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  margin-bottom: 3rem;
+  float: none !important;
+}
+.inside {
+  display: inline-block;
+  margin: 10px auto;
+}
+.amount {
+  width: 50px;
+  border: none;
+}
+
+.item-name {
+  cursor: pointer;
+  position: relative;
+}
+.form-holder {
+  width: 25%;
+  position: relative;
+  margin: 10% auto;
+  padding: 30px 0;
+  text-align: center;
+}
+form {
+  position: relative;
+  border-top: 1px solid grey;
+}
+.is-registered {
+  border: 2px solid #007bff;
+  box-shadow: inset 0 0 5px #007bff;
+  -moz-box-shadow: inset 0 0 5px #007bff;
+  -webkit-box-shadow: inset 0 0 5px #007bff;
+}
+.text-align {
+  text-align: center;
+}
+.text-align h1 {
+  background-color: #a7c5eb;
+  margin-bottom: 0;
+  border-radius: 5px 5px 0 0;
+}
+form div {
+  margin: 10px 0;
+}
+.form-hanlder {
+  display: inline-block;
+  margin: 0 5%;
+  width: 35%;
+  border: 1px solid grey;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.form-hanlder:hover {
+  cursor: pointer;
+}
+
+form input {
+  text-align: center;
+}
+.footer {
+  display: block;
+  float: left !important;
+  width: 100%;
+}
+.wrong {
+  font-size: 12px;
+  color: red;
+}
+
+/*Removes Arrows from number input*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
