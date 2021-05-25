@@ -27,13 +27,14 @@ function App() {
   }
   //sets isLoggedIn via google auth
   const [isLoggedIn, setIsLoggedIn] = useState(firebase.auth().currentUser);
-  const [isVerified, setIsVerified] = useState(false);
+  const [isVerified, setIsVerified] = useState(null);
   //verification check
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
-        if (isVerified != null) {
+        if (user.emailVerified != null && user.emailVerified) {
           setIsLoggedIn(true);
+          setIsVerified(true);
         } else {
           console.log("it's null");
           setIsLoggedIn(false);
@@ -42,7 +43,7 @@ function App() {
         setIsLoggedIn(false);
       }
     });
-  }, []);
+  }, [isVerified]);
   //javascript responsive functionality
   function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -96,6 +97,7 @@ function App() {
         <Form
           firebase={firebase}
           setIsLoggedIn={setIsLoggedIn}
+          setIsVerified={setIsVerified}
           isVerified={isVerified}
           details={details}
         />

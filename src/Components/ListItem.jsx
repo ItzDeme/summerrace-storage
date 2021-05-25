@@ -5,6 +5,9 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 function ListItem(props) {
   //image of the monsters that will display on hover
   const image = props.mobImage;
+  var mobLink = image.match(/(\d+)/);
+  const rmsLink = `https://ratemyserver.net/mob_db.php?mob_id=${mobLink[0]}&small=1`;
+
   //set custom color for the text amount
   const customColor = {
     color: "",
@@ -76,7 +79,9 @@ function ListItem(props) {
               animation="false"
               overlay={showMob}
             >
-              <a href="#">{props.whoDrops}</a>
+              <a href={rmsLink} rel="noopener noreferrer" target="_blank">
+                {props.whoDrops}
+              </a>
             </OverlayTrigger>
           </td>
           <td>{props.monsterPercentage}</td>

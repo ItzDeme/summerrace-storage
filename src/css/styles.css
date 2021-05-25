@@ -104,3 +104,17 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+  .form-hanlder {
+    display: block;
+    width: 100%;
+  }
+  .h3 {
+    font-size: 1rem;
+  }
+  .btn-lg {
+    font-size: 0.8rem;
+  }
+}

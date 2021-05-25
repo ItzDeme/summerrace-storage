@@ -20,6 +20,7 @@ function Form(props) {
       setPassword(event.target.value);
     }
   }
+
   //form functionality
   function handleForm(event) {
     //signing UP with email and password
@@ -37,6 +38,21 @@ function Form(props) {
               if (!props.isVerified) {
                 const notVerified = "Check your email!";
                 errorHandler(notVerified);
+              } else {
+                firebase
+                  .database()
+                  .ref("/users/")
+                  .orderByChild("email")
+                  .equalTo(user.email)
+                  .once("value", (snapshot) => {
+                    if (snapshot.exists()) {
+                      props.setIsLoggedIn(true);
+                    } else {
+                      writeUserData(user);
+                      props.setIsLoggedIn(true);
+                    }
+                  });
+                props.setIsVerified(true);
               }
             },
             function (error) {

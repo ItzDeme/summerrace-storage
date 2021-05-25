@@ -23,7 +23,6 @@ function Container(props) {
           }
           const [obj, id, info] = userInfo;
           setUserId(id.item);
-          // console.log(id);
           setEmail(obj.item);
 
           const infoTwo = info.item;
